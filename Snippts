@@ -1,0 +1,5 @@
+snippts :APTableController do # this defines a collection
+	snippt 'test_snippt' # this searches for a snippt	
+end
+
+snippts 'mattt-github' # this searches for a collection

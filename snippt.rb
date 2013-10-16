@@ -93,17 +93,6 @@ class Snippt
 	end
 end
 
-def snippt snippt_name
-	s = Snippt.new(snippt_name)
-	yield s
-
-	# make snippt pretty
-	s.snippt = s.snippt.mtlp
-
-	# create snippt_plist
-	s.make_plist
-end
-
 class String
 	def mtlp
 		min_space = nil
@@ -167,6 +156,38 @@ class String
   end
 end
 
+def search_snippt_by_name name
+	puts "search_snippt_by_name #{name}"
+end
+
+def snippt snippt_name, &callback
+	if callback
+		s = Snippt.new(snippt_name)
+	
+		yield s
+	
+		# make snippt pretty
+		s.snippt = s.snippt.mtlp
+
+		# create snippt_plist
+		s.make_plist
+	else
+		search_snippt_by_name snippt_name
+	end
+end
+
+def search_snippts_by_name collection_name
+	puts "search_snippts_by_name #{collection_name}"
+end
+
+def snippts collection_name, &callback
+	if callback
+		yield 
+	else 
+		search_snippts_by_name collection_name
+	end
+end
+
 def load_snippt snippt_file
 	begin
 		load snippt_file
@@ -207,6 +228,14 @@ def check snippt_files
 	puts "check #{snippt_files}"
 end
 
+def run_snippts_file
+	if Dir['Snippts'].count > 0
+		load Dir['Snippts'][0]
+	else
+		puts "yolo!"
+	end
+end
+
 args = ARGV
 
 if args.count > 0
@@ -223,5 +252,5 @@ if args.count > 0
 		print_help
 	end
 else
-	print_help
+	run_snippts_file
 end
