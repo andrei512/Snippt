@@ -1,0 +1,18 @@
+snippt :useFoo do |s|
+	s.triggers = ["use Foo"] # "useFoo" is implicit
+
+	s.snippt = <<-SNIPPT
+		Foo *<# foo #> = [[Foo alloc] initWithBar:<# bar #>];
+
+		[foo setA:^{
+			<# ... #>
+		}];
+
+		[foo setB:^{
+			<# ... #>
+		}];
+
+		[foo start];
+	SNIPPT
+
+end
