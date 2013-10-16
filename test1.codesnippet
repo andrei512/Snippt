@@ -1,0 +1,40 @@
+loading test1.snippt
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>useFoo</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>Foo *&lt;# foo #&gt; = [[Foo alloc] initWithBar:&lt;# bar #&gt;];
+	
+	[foo setA:^{
+		&lt;# ... #&gt;
+	}];
+	
+	[foo setB:^{
+		&lt;# ... #&gt;
+	}];
+	
+	[foo start]; 
+	
+	// si Ana are mere ;)
+	</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4864F2D2-A387-4B04-8D1B-01CC73ABBEF0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>seeds random number generation</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>useFoo</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
